@@ -1,0 +1,128 @@
+{
+    "tour1": {
+        "default": {
+            "firstScene": "hall",
+            "sceneFadeDuration": 1000
+        },
+
+        "scenes": {
+            "hall": {
+                "title": "Hall",
+                "hfov": 110,
+                "pitch": -3,
+                "yaw": 117,
+                "type": "equirectangular",
+                "panorama": "images/tours/tour1/hall.jpg",
+                "hotSpots": [{
+                    "pitch": -2.1,
+                    "yaw": 132.9,
+                    "type": "scene",
+                    "text": "Spring House or Dairy",
+                    "sceneId": "house"
+                }]
+            },
+
+            "kitchen": {
+                "title": "Kitchen",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "images/tour1/kitchen.jpg",
+                "hotSpots": [{
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Mason Circle",
+                    "sceneId": "circle",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }]
+            },
+
+            "bed": {
+                "title": "Bedroom",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "images/tour1/bed.jpg",
+                "hotSpots": [{
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Mason Circle",
+                    "sceneId": "circle",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }]
+            },
+
+            "bed2": {
+                "title": "Bedroom 2",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "images/tour1/bed2.jpg",
+                "hotSpots": [{
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Mason Circle",
+                    "sceneId": "circle",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }]
+            },
+
+            "living": {
+                "title": "Living Room",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "images/tour1/living.jpg",
+                "hotSpots": [{
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Mason Circle",
+                    "sceneId": "circle",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }]
+            },
+
+            "bath": {
+                "title": "Bathroom",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "images/tour1/bath.jpg",
+                "hotSpots": [{
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Mason Circle",
+                    "sceneId": "circle",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }]
+            },
+
+            "bath2": {
+                "title": "Bathroom 2",
+                "hfov": 110,
+                "yaw": 5,
+                "type": "equirectangular",
+                "panorama": "images/tour1/bath2.jpg",
+                "hotSpots": [{
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Mason Circle",
+                    "sceneId": "circle",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }]
+            }
+        }
+    }
+}
