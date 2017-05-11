@@ -3,8 +3,6 @@ var router = express.Router();
 var fs = require("fs");
 var jsonfile = require("jsonfile");
 
-//var tours = JSON.parse(fs.readFileSync("db/tours.json", 'utf8'));
-
 router.get('/', (req, res, next) => {
     res.render('main', {
         data: {
@@ -23,11 +21,13 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/tour1', (req, res, next) => {
-	//create tour object as javascript
+    //get tour json
+	var tour1 = JSON.parse(fs.readFileSync("public/tours/tour1.json", 'utf8'));
+
     res.render('tour1', {
         data: {
             title: 'Tour 1'
-            //tour: "tours/tour1.json"
+            //tour: "tour1"
         },
         vue: {
             head: {
@@ -36,7 +36,9 @@ router.get('/tour1', (req, res, next) => {
                     { property:'og:title', content: 'DualityView'},
                     { name:'twitter:title', content: 'DualityView'},
                 ]
-            }    
+            },
+            components: ['sidenav']
+            //TODO: get scenes from json, pass it as props into sidebar, create links there with vue   
         }
     });
 })

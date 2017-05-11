@@ -1,25 +1,25 @@
 {
-        "default": {
-            "firstScene": "hall",
-            "sceneFadeDuration": 1000,
-            "autoLoad": true,
-            "hotSpotDebug": true
-        },
+    "default": {
+        "firstScene": "hall",
+        "sceneFadeDuration": 1000,
+        "autoLoad": true,
+        "hotSpotDebug": true
+    },
 
-        "scenes": {
-            "hall": {
-                "type": "multires",
-                "title": "Hall",
-                "multiRes": {
-                    "path": "images/tours/tour1/hall/%l/%s%y_%x",
-                    "fallbackPath": "images/tours/tour1/hall/fallback/%s",
-                    "extension": "jpg",
-                    "tileResolution": 512,
-                    "maxLevel": 4,
-                    "cubeResolution": 3904
-                },
-                "hotSpots": [
-                    
+    "scenes": {
+        "hall": {
+            "type": "multires",
+            "title": "Hall",
+            "multiRes": {
+                "path": "tours/images/tours/tour1/hall/%l/%s%y_%x",
+                "fallbackPath": "tours/images/tours/tour1/hall/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 3904
+            },
+            "hotSpots": [
+                
                 {
                     "pitch": -39.45983761176859,
                     "yaw": -41.13858531715207,
@@ -36,50 +36,50 @@
                     "sceneId": "kitchen"
                 }
             ]
+        },
+
+        "living": {
+            "type": "multires",
+            "title": "Living Room",
+
+            "multiRes": {
+                "path": "tours/images/tours/tour1/living/%l/%s%y_%x",
+                "fallbackPath": "tours/images/tours/tour1/living/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 3856
             },
+            "hotSpots": [{
+                "pitch": -2.1,
+                "yaw": 132.9,
+                "type": "scene",
+                "text": "Hall",
+                "sceneId": "hall"
+            }]
+        },
 
-            "living": {
-                "type": "multires",
-                "title": "Living Room",
-
-                "multiRes": {
-                    "path": "images/tours/tour1/living/%l/%s%y_%x",
-                    "fallbackPath": "images/tours/tour1/living/fallback/%s",
-                    "extension": "jpg",
-                    "tileResolution": 512,
-                    "maxLevel": 4,
-                    "cubeResolution": 3856
-                },
-                "hotSpots": [{
-                    "pitch": -2.1,
-                    "yaw": 132.9,
-                    "type": "scene",
-                    "text": "Hall",
-                    "sceneId": "hall"
-                }]
+        "kitchen": {
+            "title": "Kitchen",
+            "type": "multires",
+            
+            "multiRes": {
+                "path": "tours/images/tours/tour1/kitchen/%l/%s%y_%x",
+                "fallbackPath": "tours/images/tours/tour1/kitchen/fallback/%s",
+                "extension": "jpg",
+                "tileResolution": 512,
+                "maxLevel": 4,
+                "cubeResolution": 3864
             },
-
-            "kitchen": {
-                "title": "Kitchen",
-                "type": "multires",
-                
-                "multiRes": {
-                    "path": "images/tours/tour1/kitchen/%l/%s%y_%x",
-                    "fallbackPath": "images/tours/tour1/kitchen/fallback/%s",
-                    "extension": "jpg",
-                    "tileResolution": 512,
-                    "maxLevel": 4,
-                    "cubeResolution": 3864
-                },
-                "hotSpots": [{
-                    "pitch": -0.6,
-                    "yaw": 37.1,
-                    "type": "scene",
-                    "text": "Hall",
-                    "sceneId": "hall",
-                    "targetYaw": -23,
-                    "targetPitch": 2
-                }]
-            }
+            "hotSpots": [{
+                "pitch": -0.6,
+                "yaw": 37.1,
+                "type": "scene",
+                "text": "Hall",
+                "sceneId": "hall",
+                "targetYaw": -23,
+                "targetPitch": 2
+            }]
+        }
     }
 }
