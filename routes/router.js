@@ -20,14 +20,13 @@ router.get('/', (req, res, next) => {
     });
 })
 
-router.get('/tour1', (req, res, next) => {
-    //get tour json
-	var tour1 = JSON.parse(fs.readFileSync("public/tours/tour1.json", 'utf8'));
+var goToTour = function (req, res, next, tourname) {
+    var tourjson = JSON.parse(fs.readFileSync("public/tours/tour1.json", 'utf8'));
 
-    res.render('tour1', {
+    res.render('tour', {
         data: {
-            title: 'Tour 1'
-            //tour: "tour1"
+            title: 'Tour 1',
+            tour: tourname
         },
         vue: {
             head: {
@@ -40,7 +39,17 @@ router.get('/tour1', (req, res, next) => {
             components: ['sidenav']
             //TODO: get scenes from json, pass it as props into sidebar, create links there with vue   
         }
-    });
+    });    
+}
+
+router.get('/tour', (req, res, next) => {
+    //build logic here that gets right json depending on user input and sends name json to frontend etc
+	var tourjson = JSON.parse(fs.readFileSync("public/tours/tour1.json", 'utf8'));
+    var tourname = "tour1"
+
+    goToTour(req, res, next, tourname) 
 })
+
+
 
 module.exports = router;

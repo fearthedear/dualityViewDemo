@@ -1,11 +1,11 @@
 <template lang='hmtl'>
-	<div class='singlerootdiv'>
+	<div class='singlerootdiv' id="homeview">
 
 		<main>
 			<h2>Welcome to {{title}} </h2>
 	
-
-			<a href='/tour1' class="btn waves-effect waves-light" type="submit" name="action">Go To Demo</a>
+			<h5>Tours available to view:</h5>
+			<a href='/tour' class="btn waves-effect waves-light" type="submit" name="action">Tour1</a>
 		</main>
 
 	</div>
