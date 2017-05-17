@@ -20,13 +20,13 @@ router.get('/', (req, res, next) => {
     });
 })
 
-var goToTour = function (req, res, next, tourname) {
-    var tourjson = JSON.parse(fs.readFileSync("public/tours/tour1.json", 'utf8'));
+var goToTour = function (req, res, next, tourname, scenes) {
 
     res.render('tour', {
         data: {
             title: 'Tour 1',
-            tour: tourname
+            tour: tourname,
+            scenes: scenes
         },
         vue: {
             head: {
@@ -45,9 +45,11 @@ var goToTour = function (req, res, next, tourname) {
 router.get('/tour', (req, res, next) => {
     //build logic here that gets right json depending on user input and sends name json to frontend etc
 	var tourjson = JSON.parse(fs.readFileSync("public/tours/tour1.json", 'utf8'));
+    //get scenes programmaticallyu: title and id
+    var scenes = [ ['hall', 'Hall' ] , ['living', 'Living Room'] , ['kitchen', 'Kitchen']  ]  
     var tourname = "tour1"
 
-    goToTour(req, res, next, tourname) 
+    goToTour(req, res, next, tourname, scenes) 
 })
 
 

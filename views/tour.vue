@@ -1,6 +1,6 @@
 <template lang='html'>
 	<div class='singlerootdiv'>
-		<sidenav></sidenav>
+		<sidenav :scenes="scenes"></sidenav>
 
 		<div id='tourobject'></div>
 
