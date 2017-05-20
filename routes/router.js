@@ -2,11 +2,22 @@ var express = require('express');
 var router = express.Router();
 var fs = require("fs");
 var jsonfile = require("jsonfile");
+var path = require('path');
 
 router.get('/', (req, res, next) => {
+    //get tours available from files in folder
+    tours = []
+    tourfolder = path.join(__dirname, '../public/tours/jsons')
+    fs.readdir(tourfolder, (err, files) => {
+      files.forEach(file => {
+        tours.push(file)
+      });
+    })
+
     res.render('main', {
         data: {
-            title: 'DualityView'
+            title: 'DualityView',
+            tours: tours
         },
         vue: {
             head: {
@@ -20,12 +31,13 @@ router.get('/', (req, res, next) => {
     });
 })
 
-var goToTour = function (req, res, next, tourname, scenes) {
+var goToTour = function (req, res, next, tourname, tourjson, scenes) {
 
     res.render('tour', {
         data: {
             title: 'Tour',
             tour: tourname,
+            tourjson: tourjson,
             scenes: scenes
         },
         vue: {
@@ -41,10 +53,10 @@ var goToTour = function (req, res, next, tourname, scenes) {
     });    
 }
 
-router.get('/tour', (req, res, next) => {
-    //TODO: get tourjson based on link clicked
-	var tourjson = JSON.parse(fs.readFileSync("public/tours/tour1.json", 'utf8'));
-    var tourname = "tour1"
+router.post('/tour', (req, res, next) => {
+    var name = req.body.name;
+	var tourjson = JSON.parse(fs.readFileSync("public/tours/jsons/" + name, 'utf8'));
+    var tourname = name;
 
     //get scenes programmatically: title and id
     var scenes = []
@@ -56,7 +68,7 @@ router.get('/tour', (req, res, next) => {
         scenes.push(scene)
     }
     
-    goToTour(req, res, next, tourname, scenes) 
+    goToTour(req, res, next, tourname, tourjson, scenes) 
 })
 
 
