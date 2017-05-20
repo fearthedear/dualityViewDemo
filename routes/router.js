@@ -24,7 +24,7 @@ var goToTour = function (req, res, next, tourname, scenes) {
 
     res.render('tour', {
         data: {
-            title: 'Tour 1',
+            title: 'Tour',
             tour: tourname,
             scenes: scenes
         },
@@ -37,18 +37,25 @@ var goToTour = function (req, res, next, tourname, scenes) {
                 ]
             },
             components: ['sidenav']
-            //TODO: get scenes from json, pass it as props into sidebar, create links there with vue   
         }
     });    
 }
 
 router.get('/tour', (req, res, next) => {
-    //build logic here that gets right json depending on user input and sends name json to frontend etc
+    //TODO: get tourjson based on link clicked
 	var tourjson = JSON.parse(fs.readFileSync("public/tours/tour1.json", 'utf8'));
-    //get scenes programmaticallyu: title and id
-    var scenes = [ ['hall', 'Hall' ] , ['living', 'Living Room'] , ['kitchen', 'Kitchen']  ]  
     var tourname = "tour1"
 
+    //get scenes programmatically: title and id
+    var scenes = []
+    var keys = Object.keys( tourjson.scenes );
+    for( var i = 0,length = keys.length; i < length; i++ ) {
+        scene = []
+        scene.push(keys[i])
+        scene.push(tourjson.scenes[ keys[ i ] ].title)
+        scenes.push(scene)
+    }
+    
     goToTour(req, res, next, tourname, scenes) 
 })
 
