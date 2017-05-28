@@ -53,9 +53,9 @@ var goToTour = function (req, res, next, tourname, tourjson, scenes) {
     });    
 }
 
-router.post('/tour', (req, res, next) => {
-    var name = req.body.name;
-	var tourjson = JSON.parse(fs.readFileSync("public/tours/jsons/" + name, 'utf8'));
+router.get('/tour', (req, res, next) => {
+    var name = req.query.name;
+    var tourjson = JSON.parse(fs.readFileSync("public/tours/jsons/" + name, 'utf8'));
     var tourname = name;
 
     //get scenes programmatically: title and id
@@ -70,7 +70,5 @@ router.post('/tour', (req, res, next) => {
     
     goToTour(req, res, next, tourname, tourjson, scenes) 
 })
-
-
 
 module.exports = router;
